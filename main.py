@@ -4,18 +4,18 @@ import json
 import requests
 from utils import *
 from gihutb_fetch import fetch_github_repo
-codebase_path="downloads"
+codebase_path=f'{os.path.dirname(os.path.realpath(__file__))}\\repo-downloads'
 
 def prompt(content,apikey):
     headers = {"Authorization": f"Bearer {apikey}"}
     url = "https://api.edenai.run/v2/text/chat"
     payload = {
         "providers": "openai",
-        "text": f"Analyze the following code and give suggestion:\n\n{content} ",
+        "text": f"Analyze the following code and give suggestion for Code Improvement,Code Optimization,Bug Identification and Resolution\n\n{content} ",
         "chatbot_global_action": "Act as an assistant",
         "previous_history": [],
         "temperature": 0.0,
-        "max_tokens": 150,
+        "max_tokens": 2000,
         "fallback_providers": ""
     }
 
@@ -52,9 +52,8 @@ def github_Repository(apikey):
 
 def start():
     print("///////////////Welcome to CodeBase Analyzer////////////")
-    print("Give your Eden AI API Key:")
-    apikey=input()
-    # print(f"Given API KEY {apikey}")
+    apikey=input("Give your Eden AI API Key: ")
+    # print(codebase_path)
     github_Repository(apikey)
 
 
