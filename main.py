@@ -7,19 +7,7 @@ from gihutb_fetch import fetch_github_repo
 codebase_path="downloads"
 
 def prompt(content,apikey):
-    # prompt=f"Analyze the following code and give suggestion:\n\n{content}"
-    # response=openai.completions.create(
-    #     model=model_engine,
-    #     prompt=prompt,
-    #     max_tokens=1024,
-    #     n=1,
-    #     stop=None,
-    #     temperature=0.5,
-    # )
-    # suggestion=response.choices[0].text_strip()
-    # return suggestion
     headers = {"Authorization": f"Bearer {apikey}"}
-
     url = "https://api.edenai.run/v2/text/chat"
     payload = {
         "providers": "openai",
@@ -34,7 +22,8 @@ def prompt(content,apikey):
     response = requests.post(url, json=payload, headers=headers)
 
     result = json.loads(response.text)
-    print(result['openai']['generated_text'])
+    # print(result['openai']['generated_text'])
+    return result['openai']['generated_text']
 
 def analyze_file(path,apikey):
     with open(path,'r') as file:
@@ -51,14 +40,14 @@ def analyze_codebase(path,apikey):
                 filesto_send.append(file_path)
     for file_path in filesto_send:
         suggestion=analyze_file(file_path,apikey)
-        print(f"Suggestion for {file_path}:\n{suggestion}")
+        print(f"Suggestion for {file_path}:\n{suggestion}\n\n")
+        print("---------------------------------------------------------------")
 
 
 def github_Repository(apikey):
     print("API KEY verified!")
     fetch_github_repo()
     analyze_codebase(codebase_path,apikey)
-    # if(fetch_github_repo()):
     
 
 def start():
