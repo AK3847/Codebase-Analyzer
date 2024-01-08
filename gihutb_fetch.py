@@ -1,15 +1,13 @@
-from github import Github 
-import json
-import requests
-import os
-from repo_download import download_repo
 from utils import *
+from repo_download import download_repo
+
+
 data={"type":"all","sort":"full-name","direction":"asc"}
 username=""
 password=""
 repo_selected=""
 repo_url="https://github.com/AK3847/Flow-Field"
-destination_folder = f'{os.path.dirname(os.path.realpath(__file__))}\\repo-downloads'
+destination_folder=repo_path
 def fetch_github_repo():
     github_token=input("Give github authorization token: ")
     username=input("Give username: ")

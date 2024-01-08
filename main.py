@@ -1,12 +1,8 @@
-import openai
-import os
-import json
-import requests
-from rich import print, pretty
-pretty.install()
 from utils import *
 from gihutb_fetch import fetch_github_repo
-codebase_path=f'{os.path.dirname(os.path.realpath(__file__))}\\repo-downloads'
+
+
+codebase_path=repo_path
 
 def prompt(content,apikey):
     headers = {"Authorization": f"Bearer {apikey}"}

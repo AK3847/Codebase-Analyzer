@@ -1,7 +1,6 @@
-from github import Github
-import os
-import os
-import shutil
+from utils import *
+
+
 def clear_subdirectories(folder_path):
     if os.path.exists(folder_path):
         entries = os.listdir(folder_path)
