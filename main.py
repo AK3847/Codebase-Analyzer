@@ -1,3 +1,6 @@
+# Tool made by Abdul-Kadir ;)
+# Github - https://github.com/AK3847
+
 from utils import *
 from gihutb_fetch import fetch_github_repo
 from analyze_codebase import analyze_codebase
