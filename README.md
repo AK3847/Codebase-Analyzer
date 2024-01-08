@@ -7,7 +7,7 @@ A python-script to analyze your github repository via LLM for code improvements,
 ```terminal
  git clone https://github.com/AK3847/Codebase-Analyzer.git
 ```
-- Go to 'Codebase-Analyzer-main' and run following command in the terminal:
+- Navigate to  `Codebase-Analyzer` folder and run following command in the terminal:
   
 ```terminal
 python main.py
