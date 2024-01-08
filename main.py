@@ -14,7 +14,7 @@ def github_Repository():
     else:
         console.print("Repository Not Downloaded, Please try again.\n",style="#CF0A0A")
         return
-    console.print("Give your AI API Key: ",style="#5272F2")
+    console.print("Give your OpenAI API Key: ",style="#5272F2")
     apikey=input()
     analyze_codebase(codebase_path,apikey)
     
