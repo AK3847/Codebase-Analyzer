@@ -15,7 +15,7 @@ def fetch_github_repo():
     github_token=input()
     g = Github(github_token)
     console.print("How do you want to find the repository?",style="#5272F2")
-    console.print("1. Using Username and Repository Name\n2.Using Repository URL",style="#5272F2")
+    console.print("1. Using Username and Repository Name\n2. Using Repository URL",style="#5272F2")
     choice=int(input())
     if(choice==1):
         console.print("Give username:",style="#5272F2")    

@@ -16,7 +16,7 @@ pretty.install()
 
 
 allowed_extensions = ['c', 'h', 'cpp', 'hpp', 'java', 'py', 'html', 'css', 'js', 'php', 'ruby', 'swift', 'go', 'dart', 'kotlin', 'ts', 'tsx', 'csharp', 'vb', 'scala', 'r', 'rust', 'lua', 'shell', 'sh', 'bash', 'ps1', 'json', 'xml', 'yaml', 'toml', 'ini']
-prompt_text="Analyze the following code and give suggestion for Code Improvement,Code Optimization,Bug Identification and Resolution\n\n"
+prompt_text="Analyze the following code and give suggestion for Code Improvement,Code Optimization,Bug Identification and Resolution in under 2000 tokens\n\n"
 repo_path=f"{os.path.dirname(os.path.realpath(__file__))}\\repo-downloads"
 
 codebase_ASCII_ART=""" 
