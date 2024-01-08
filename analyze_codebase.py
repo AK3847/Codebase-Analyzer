@@ -11,8 +11,8 @@ def prompt(content,apikey):
         "text": f"{prompt_text}{content} ",
         "chatbot_global_action": "Act as an assistant",
         "previous_history": [],
-        "temperature": 0.0,
-        "max_tokens": 2000,
+        "temperature": 0.25,
+        "max_tokens": 3000,
         "fallback_providers": ""
     }
 
@@ -20,7 +20,9 @@ def prompt(content,apikey):
 
     result = json.loads(response.text)
     # print(result['openai']['generated_text'])
-    return result['openai']['generated_text']
+    generated_text = result.get('openai', {}).get('generated_text', 'No suggestion available')
+    return generated_text
+    # return result['openai']['generated_text']
 
 def analyze_file(path,apikey):
     with open(path,'r') as file:
@@ -38,12 +40,12 @@ def analyze_codebase(path,apikey):
                 filesto_send.append(file_path)
     console = Console()
     with Progress() as progress:
-        task = progress.add_task("[cyan]Analyzing Codebase...", total=len(filesto_send))
+        task = progress.add_task("[#5272F2]Analyzing Codebase...", total=len(filesto_send))
         for file_path in filesto_send:
             progress.update(task, advance=1)
             suggestion = analyze_file(file_path, apikey)
-            console.print()
-            console.print(f"Suggestion for {file_path}:\n{suggestion}\n", style="italic #b98200")
+            console.print("\n")
+            console.print(f"Suggestion for {file_path}:\n{suggestion}\n", style="#FCF5ED")
             console.print("---------------------------------------------------------------")
             suggestion_load += f"Suggestion for {file_path}:\n{suggestion}\n---------------------------------------------------------------\n\n"
         

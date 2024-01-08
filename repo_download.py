@@ -1,25 +1,30 @@
 from utils import *
-
-
+from rich.progress import Progress
+from rich.console import Console
+console=Console()
 def clear_subdirectories(folder_path):
     if os.path.exists(folder_path):
         entries = os.listdir(folder_path)
-        for entry in entries:
-            entry_path = os.path.join(folder_path, entry)
-            if os.path.isdir(entry_path):
-                try:
-                    shutil.rmtree(entry_path)
-                    print(f"The subdirectory {entry_path} and its contents have been cleared.")
-                except Exception as e:
-                    print(f"Failed to clear {entry_path}: {e}")
-            else:
-                try:
-                    os.remove(entry_path)
-                    print(f"The file {entry_path} has been deleted.")
-                except Exception as e:
-                    print(f"Failed to delete {entry_path}: {e}")
+        with Progress(console=console, transient=True) as progress:
+            task = progress.add_task("[{#CD1818}]Clearing subdirectories...", total=len(entries))
+            for entry in entries:
+                entry_path = os.path.join(folder_path, entry)
+                if os.path.isdir(entry_path):
+                    try:
+                        shutil.rmtree(entry_path)
+                        progress.update(task, advance=1, description=f"Clearing: {entry}")
+                        console.print(f"The subdirectory {entry_path} and its contents have been cleared.",style="#CF0A0A")
+                    except Exception as e:
+                        console.print(f"Failed to clear {entry_path}: {e}",style="#CF0A0A")
+                else:
+                    try:
+                        os.remove(entry_path)
+                        progress.update(task, advance=1, description=f"Deleting: {entry}")
+                        console.print(f"The file {entry_path} has been deleted.",style="#CF0A0A")
+                    except Exception as e:
+                       console.print(f"Failed to delete {entry_path}: {e}",style="#CF0A0A")
     else:
-        print(f"The folder {folder_path} does not exist.")
+        console.print(f"The folder {folder_path} does not exist.",style="Italic #CF0A0A")
 
 
 def download_repo(g, repo_name, destination_folder, allowed_extensions):
@@ -38,7 +43,7 @@ def download_repo(g, repo_name, destination_folder, allowed_extensions):
                     os.makedirs(os.path.dirname(local_file_path), exist_ok=True)
                     with open(local_file_path, 'wb') as f:
                         f.write(decoded_content)
-                    print(f"Downloaded: {content.path}")
+                    console.print(f"Downloaded: {content.path}",style="#42855B")
             elif content.type == "dir":
                 subdir_contents = repo.get_contents(content.path)
                 download_contents(subdir_contents, os.path.join(current_path, content.name))
