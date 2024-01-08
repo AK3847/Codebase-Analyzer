@@ -14,12 +14,12 @@ python main.py
 ```
 - You will get an ouput like below in the terminal: <br>
   ![image](https://github.com/AK3847/Codebase-Analyzer/assets/94222544/f62d6383-8c5a-4d61-9e08-9dad642f3c0f) <br>
-- Kindly provide a _GITHUB Authorization Token_ ( you can get one from <a href="https://github.com/settings/tokens target=__blank">here</a>) <br>
+- Kindly provide a _GITHUB Authorization Token_ ( you can get one from <a href="https://github.com/settings/tokens ">here</a>) <br>
 - Next provide _Username_ and _Repository Name_: <br>
 ![Screenshot 2024-01-08 170353](https://github.com/AK3847/Codebase-Analyzer/assets/94222544/344f521b-15c3-4c08-96c7-ad807ffe412f) <br>
 - Now the script will download all the files from repository in the `repo-downloads` folder <br>
   ![image](https://github.com/AK3847/Codebase-Analyzer/assets/94222544/56a675ff-c045-4492-ac4a-9e336a7d08c9) <br>
-- Next provide _Eden AI API Key_ ( register <a href="https://app.edenai.run/user/login" target=__blank>here</a> for free to get one): <br>
+- Next provide _Eden AI API Key_ ( register <a href="https://app.edenai.run/user/login">here</a> for free to get one): <br>
   ![Screenshot 2024-01-08 170955](https://github.com/AK3847/Codebase-Analyzer/assets/94222544/afb6ca5e-b2df-4f5b-becf-76a333a8e208) <br>
 - Now the LLM will start to analyze code files one-by-one and output is shown in terminal: <br>
 ![image](https://github.com/AK3847/Codebase-Analyzer/assets/94222544/bd5c1ef3-49e8-472a-a1e5-49b1083ea18c) <br>
