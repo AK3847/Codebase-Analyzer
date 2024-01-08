@@ -45,7 +45,8 @@ def analyze_codebase(path,apikey):
             progress.update(task, advance=1)
             suggestion = analyze_file(file_path, apikey)
             console.print("\n")
-            console.print(f"Suggestion for {file_path}:\n{suggestion}\n", style="#FCF5ED")
+            console.print(f"\n[not italic]Suggestion for[/not italic] {os.path.basename(file_path)}:\n", style="italic #FFD95A")
+            console.print(f"{suggestion}\n",style="italic #FCF5ED")
             console.print("---------------------------------------------------------------")
             suggestion_load += f"Suggestion for {file_path}:\n{suggestion}\n---------------------------------------------------------------\n\n"
         
