@@ -13,7 +13,7 @@ def prompt(content,apikey):
     url = "https://api.edenai.run/v2/text/chat"
     payload = {
         "providers": "openai",
-        "text": f"Analyze the following code and give suggestion for Code Improvement,Code Optimization,Bug Identification and Resolution\n\n{content} ",
+        "text": f"{prompt_text}{content} ",
         "chatbot_global_action": "Act as an assistant",
         "previous_history": [],
         "temperature": 0.0,
