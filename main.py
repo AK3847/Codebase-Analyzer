@@ -1,8 +1,9 @@
 from utils import *
 from gihutb_fetch import fetch_github_repo
-
+from suggestion_download import download
 
 codebase_path=repo_path
+suggestion_load=""
 
 def prompt(content,apikey):
     headers = {"Authorization": f"Bearer {apikey}"}
@@ -30,6 +31,7 @@ def analyze_file(path,apikey):
     return suggestion
 
 def analyze_codebase(path,apikey):
+    global suggestion_load
     filesto_send=[]
     for root,dirs,files in os.walk(path):
         for file in files:
@@ -40,6 +42,8 @@ def analyze_codebase(path,apikey):
         suggestion=analyze_file(file_path,apikey)
         print(f"Suggestion for {file_path}:\n{suggestion}\n\n")
         print("---------------------------------------------------------------")
+        suggestion_load+=f"Suggestion for {file_path}:\n{suggestion}\n\n---------------------------------------------------------------\n\n"
+    download(suggestion_load)
 
 
 def github_Repository(apikey):
