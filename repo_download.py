@@ -16,7 +16,7 @@ def clear_subdirectories(folder_path):
                         console.print(f"The subdirectory {entry_path} and its contents have been cleared.",style="#CF0A0A")
                     except Exception as e:
                         console.print(f"Failed to clear {entry_path}: {e}",style="#CF0A0A")
-                else:
+                elif entry!="do-not-delete.txt":
                     try:
                         os.remove(entry_path)
                         progress.update(task, advance=1, description=f"Deleting: {entry}")
