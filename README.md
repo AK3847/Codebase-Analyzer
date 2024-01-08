@@ -13,16 +13,23 @@ A python-script to analyze your github repository via LLM for code improvements,
 python main.py
 ```
 - You will get an ouput like below in the terminal: <br>
-  ![image](https://github.com/AK3847/Codebase-Analyzer/assets/94222544/f62d6383-8c5a-4d61-9e08-9dad642f3c0f) <br>
+  ![Screenshot 2024-01-09 023242](https://github.com/AK3847/Codebase-Analyzer/assets/94222544/7310c561-f2d8-4397-83bc-06fd8728edea) <br>
+  
 - Kindly provide a _GITHUB Authorization Token_ ( you can get one from <a href="https://github.com/settings/tokens ">here</a>) <br>
-- Next provide _Username_ and _Repository Name_: <br>
-![Screenshot 2024-01-08 170353](https://github.com/AK3847/Codebase-Analyzer/assets/94222544/344f521b-15c3-4c08-96c7-ad807ffe412f) <br>
+
+- Next chose either one of the option : <br>
+  ![image](https://github.com/AK3847/Codebase-Analyzer/assets/94222544/779e8e3b-6d69-49f4-9dbe-f06302c091fa)<br>
+  
 - Now the script will download all the files from repository in the `repo-downloads` folder <br>
   ![image](https://github.com/AK3847/Codebase-Analyzer/assets/94222544/56a675ff-c045-4492-ac4a-9e336a7d08c9) <br>
-- Next provide _Eden AI API Key_ ( register <a href="https://app.edenai.run/user/login">here</a> for free to get one): <br>
-  ![Screenshot 2024-01-08 170955](https://github.com/AK3847/Codebase-Analyzer/assets/94222544/afb6ca5e-b2df-4f5b-becf-76a333a8e208) <br>
+  
+- Next provide _OpenAI API Key_ ( register <a href="https://platform.openai.com/signup">here</a> to start with initial free credits): <br>
+  ![Screenshot 2024-01-09 024135](https://github.com/AK3847/Codebase-Analyzer/assets/94222544/a1f12ace-8ea2-4c4d-a0ef-2cf9bee29c38)
+
+
 - Now the LLM will start to analyze code files one-by-one and output is shown in terminal: <br>
 ![image](https://github.com/AK3847/Codebase-Analyzer/assets/94222544/bd5c1ef3-49e8-472a-a1e5-49b1083ea18c) <br>
+
 - At last all the suggestions will be stored in `suggestions.txt` file: <br>
   ![image](https://github.com/AK3847/Codebase-Analyzer/assets/94222544/c2f84f8d-7d89-4cc9-ad1b-07880fc41a43)
 
