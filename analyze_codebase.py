@@ -1,4 +1,6 @@
 from utils import *
+from rich.console import Console
+from rich.progress import Progress
 from suggestion_download import download
 suggestion_load=""
 def prompt(content,apikey):
@@ -34,9 +36,15 @@ def analyze_codebase(path,apikey):
             file_path=os.path.join(root,file)
             if any(file_path.endswith(ext) for ext in allowed_extensions):
                 filesto_send.append(file_path)
-    for file_path in filesto_send:
-        suggestion=analyze_file(file_path,apikey)
-        print(f"Suggestion for {file_path}:\n{suggestion}\n\n")
-        print("---------------------------------------------------------------")
-        suggestion_load+=f"Suggestion for {file_path}:\n{suggestion}\n\n---------------------------------------------------------------\n\n"
+    console = Console()
+    with Progress() as progress:
+        task = progress.add_task("[cyan]Analyzing Codebase...", total=len(filesto_send))
+        for file_path in filesto_send:
+            progress.update(task, advance=1)
+            suggestion = analyze_file(file_path, apikey)
+            console.print()
+            console.print(f"Suggestion for {file_path}:\n{suggestion}\n", style="italic #b98200")
+            console.print("---------------------------------------------------------------")
+            suggestion_load += f"Suggestion for {file_path}:\n{suggestion}\n---------------------------------------------------------------\n\n"
+        
     download(suggestion_load)
