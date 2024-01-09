@@ -2,7 +2,7 @@ from utils import *
 from rich.console import Console
 from rich.progress import Progress
 from suggestion_download import download
-
+from tokens import tokencount
 
 suggestion_load=""
 
@@ -51,8 +51,11 @@ def prompt_openai(content,apikey):
 def analyze_file(path,apikey):
     with open(path,'r') as file:
         content=file.read()
-    suggestion=prompt_openai(content,apikey)
-    return suggestion
+    if(tokencount(content)):
+        suggestion=prompt_openai(content,apikey)
+        return suggestion
+    else:
+        return "The code length is more than 1000 token! Can't send it to ChatGPT for analyzing ( 4097 token limit)"
 
 
 def analyze_codebase(path,apikey):

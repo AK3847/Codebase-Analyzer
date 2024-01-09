@@ -7,7 +7,7 @@ import requests
 import re
 import getpass
 import pwinput
-
+import tiktoken
 
 import openai
 from github import Github
