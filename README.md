@@ -17,7 +17,7 @@ python main.py
 - You will get an ouput like below in the terminal: <br>
   ![Screenshot 2024-01-09 023242](https://github.com/AK3847/Codebase-Analyzer/assets/94222544/7310c561-f2d8-4397-83bc-06fd8728edea) <br>
   
-- Kindly provide a _GITHUB Authorization Token_ ( you can get one from [here](https://github.com/settings/token) ) <br>
+- Kindly provide a _GITHUB Authorization Token_ ( you can get one from [here](https://github.com/settings/tokens) ) <br>
 
 - Next chose either one of the option : <br>
   ![image](https://github.com/AK3847/Codebase-Analyzer/assets/94222544/779e8e3b-6d69-49f4-9dbe-f06302c091fa)<br>
