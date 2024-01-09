@@ -4,7 +4,7 @@ A python-script to analyze your github repository via ChatGPT LLM for code impro
 - [How it works?](https://github.com/AK3847/Codebase-Analyzer/tree/main#how-it-works)
 - [Python Modules used](https://github.com/AK3847/Codebase-Analyzer/tree/main?tab=readme-ov-file#python-modules-used)
 ##  How to use? 🚀
-- First clone and unzip this repository.
+- First clone or download & unzip this repository.
   
 ```terminal
  git clone https://github.com/AK3847/Codebase-Analyzer.git
@@ -58,5 +58,6 @@ python main.py
   openai
   github
   rich
+  pwinput
 ```
 _All of this are imported in_ `utils.py`
