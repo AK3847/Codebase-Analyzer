@@ -58,5 +58,6 @@ python main.py
   openai
   github
   rich
+  pwinput
 ```
 _All of this are imported in_ `utils.py`
