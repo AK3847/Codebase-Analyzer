@@ -59,5 +59,6 @@ python main.py
   github
   rich
   pwinput
+  tiktoken
 ```
 _All of this are imported in_ `utils.py`
