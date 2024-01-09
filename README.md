@@ -2,7 +2,8 @@
 A python-script to analyze your github repository via ChatGPT LLM for code improvements,bug fixes etc.
 - [How to use?](https://github.com/AK3847/Codebase-Analyzer/edit/main/README.md#how-to-use)
 - [How it works?](https://github.com/AK3847/Codebase-Analyzer/tree/main#how-it-works)
-## How to use?
+- [Python Modules used](https://github.com/AK3847/Codebase-Analyzer/tree/main?tab=readme-ov-file#python-modules-used)
+## 🚀 How to use?
 - First clone and unzip this repository.
   
 ```terminal
@@ -34,7 +35,7 @@ python main.py
 - At last all the suggestions will be stored in `suggestions.txt` file: <br>
   ![image](https://github.com/AK3847/Codebase-Analyzer/assets/94222544/c2f84f8d-7d89-4cc9-ad1b-07880fc41a43)
 
-## How it works?
+## ✨ How it works?
 - First using the provided Github authorization token we fetch the repository using `Github` module of python, this is done in <kbd>github_fetch.py<kbd>
 - Next we download all the files such as c,c++,java,python,html,css etc from the repository into our  `repo-downlaods` local folder.
   > The file extensions to be selected can be modified via <kbd>utils.py</kbd>
@@ -45,7 +46,7 @@ python main.py
   > The prompt can be modified via <kbd>utils.py</kbd>
 - All suggestions are stored in `suggestions.txt` file for later use.
 
-## Python Modules used:
+## 🐍 Python Modules used:
 ```
   os
   json
@@ -58,4 +59,4 @@ python main.py
   github
   rich
 ```
-_All of this are imported in `utilis.py`_
+_All of this are imported in_ `utils.py`
