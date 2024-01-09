@@ -5,6 +5,8 @@ import  shutil
 import json
 import requests
 import re
+import getpass
+import pwinput
 
 
 import openai
