@@ -1,6 +1,7 @@
 # Codebase-Analyzer
-A python-script to analyze your github repository via LLM for code improvements,bug fixes etc.
-
+A python-script to analyze your github repository via ChatGPT LLM for code improvements,bug fixes etc.
+- [How to use?](https://github.com/AK3847/Codebase-Analyzer/edit/main/README.md#how-to-use)
+- [How it works?](https://github.com/AK3847/Codebase-Analyzer/tree/main#how-it-works)
 ## How to use?
 - First clone and unzip this repository.
   
@@ -15,7 +16,7 @@ python main.py
 - You will get an ouput like below in the terminal: <br>
   ![Screenshot 2024-01-09 023242](https://github.com/AK3847/Codebase-Analyzer/assets/94222544/7310c561-f2d8-4397-83bc-06fd8728edea) <br>
   
-- Kindly provide a _GITHUB Authorization Token_ ( you can get one from <a href="https://github.com/settings/tokens ">here</a>) <br>
+- Kindly provide a _GITHUB Authorization Token_ ( you can get one from [here](https://github.com/settings/token) ) <br>
 
 - Next chose either one of the option : <br>
   ![image](https://github.com/AK3847/Codebase-Analyzer/assets/94222544/779e8e3b-6d69-49f4-9dbe-f06302c091fa)<br>
@@ -43,3 +44,18 @@ python main.py
 - Then all files are sent to LLM one by one via `requests` module of python with a `prompt`, this is done in <kbd>analyze_codeabase.py</kbd>
   > The prompt can be modified via <kbd>utils.py</kbd>
 - All suggestions are stored in `suggestions.txt` file for later use.
+
+## Python Modules used:
+```
+  os
+  json
+  requets
+  shutil
+  json
+  requests
+  re
+  openai
+  github
+  rich
+```
+_All of this are imported in `utilis.py`_
