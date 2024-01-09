@@ -16,7 +16,7 @@ pretty.install()
 
 
 allowed_extensions = ['c', 'h', 'cpp', 'hpp', 'java', 'py', 'html', 'css', 'js', 'php', 'ruby', 'swift', 'go', 'dart', 'kotlin', 'ts', 'tsx', 'csharp', 'vb', 'scala', 'r', 'rust', 'lua', 'shell', 'sh', 'bash', 'ps1', 'json', 'xml', 'yaml', 'toml', 'ini']
-# prompt_text="Analyze the following code and give suggestion for Code Improvement,Code Optimization,Bug Identification and Resolution in under 2000 tokens\n\n"
+# prompt_text="Analyze the following code and give suggestion for Code Improvement,Code Optimization,Bug Identification and Resolution, suggest no more than 2-3 points per topic.\n\n"
 repo_path=f"{os.path.dirname(os.path.realpath(__file__))}\\repo-downloads"
 prompt_text="Please review the code below and identify any syntax or logical errors, suggest ways to refactor and improve code quality, enhance performance, address security concerns, and bug identification & fix. Limit your response to 2-3 suggestion per field."
 codebase_ASCII_ART=""" 
