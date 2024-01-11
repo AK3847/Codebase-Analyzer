@@ -1,6 +1,5 @@
 import os
 import json
-import requests
 import  shutil
 import json
 import requests
