@@ -65,4 +65,4 @@ python main.py
   pwinput
   tiktoken
 ```
-_All of this are imported in_ `utils.py`
+- _All of this are imported in_ `utils.py`
