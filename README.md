@@ -9,6 +9,10 @@ A python-script to analyze your github repository via ChatGPT LLM for code impro
 ```terminal
  git clone https://github.com/AK3847/Codebase-Analyzer.git
 ```
+- Run the following command to install all the python module requirements:
+```terminal
+  pip install -r requirements
+```
 - Navigate to  `Codebase-Analyzer` folder and run following command in the terminal:
   
 ```terminal
