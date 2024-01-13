@@ -6,7 +6,7 @@ from tokens import tokencount
 
 suggestion_load=""
 
-
+#function to analyze the given file using Eden AI (a third party AI which uses ChatGPT in the backend)
 def prompt_edenai(content,apikey):
     headers = {"Authorization": f"Bearer {apikey}"}
     url = "https://api.edenai.run/v2/text/chat"
@@ -27,7 +27,7 @@ def prompt_edenai(content,apikey):
     generated_text = result.get('openai', {}).get('generated_text', 'No suggestion available')
     return generated_text
 
-
+#function to analyze a code file (content) via ChatGPT using given API KEY
 def prompt_openai(content,apikey):
     headers={
         "Authorization":f"Bearer {apikey}",
@@ -47,7 +47,7 @@ def prompt_openai(content,apikey):
     generated_text=result.get('choices', [{}])[0].get('message', {}).get('content', 'No content available')
     return generated_text
 
-
+#to analyze the file give in argument and return the suggestion given by ChatGPT
 def analyze_file(path,apikey):
     with open(path,'r') as file:
         content=file.read()
@@ -58,6 +58,7 @@ def analyze_file(path,apikey):
         return "The code length is more than 1000 token! Can't send it to ChatGPT for analyzing ( 4097 token limit)"
 
 
+#function to analyze the whole codebase file-by-file
 def analyze_codebase(path,apikey):
     global suggestion_load
     filesto_send=[]
