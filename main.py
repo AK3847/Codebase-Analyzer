@@ -1,4 +1,4 @@
-# Tool made by Abdul-Kadir ;)
+# Python-tool made by Abdul-Kadir ;)
 # Github - https://github.com/AK3847
 # A python-script to analyze your GitHub repository via ChatGPT LLM 
 # for code improvements, bug fixes, security improvement etc.
