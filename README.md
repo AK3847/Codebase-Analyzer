@@ -57,7 +57,6 @@ python main.py
   requets
   shutil
   json
-  requests
   re
   openai
   github
