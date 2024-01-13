@@ -47,7 +47,7 @@ def prompt_openai(content,apikey):
     generated_text=result.get('choices', [{}])[0].get('message', {}).get('content', 'No content available')
     return generated_text
 
-#to analyze the file give in argument and return the suggestion given by ChatGPT
+#function to analyze the file give in argument and return the suggestion given by ChatGPT
 def analyze_file(path,apikey):
     with open(path,'r') as file:
         content=file.read()
