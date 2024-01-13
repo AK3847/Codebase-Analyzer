@@ -1,5 +1,7 @@
 # Tool made by Abdul-Kadir ;)
 # Github - https://github.com/AK3847
+# A python-script to analyze your GitHub repository via ChatGPT LLM 
+# for code improvements, bug fixes, security improvement etc.
 
 from utils import *
 from gihutb_fetch import fetch_github_repo
