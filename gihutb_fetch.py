@@ -3,13 +3,15 @@ from repo_download import download_repo
 from rich.console import Console
 console=Console()
 
-
 data={"type":"all","sort":"full-name","direction":"asc"}
 username=""
 password=""
 repo_selected=""
 repo_url="https://github.com/AK3847/Flow-Field"
 destination_folder=repo_path
+
+# function to fetch a GITHUB repository using URL or Username & Repository name
+# via Github Access token
 def fetch_github_repo():
     console.print("Give GitHub Access Token",style="#5272F2")
     github_token=pwinput.pwinput(prompt='token: ' ,mask='*')
@@ -25,7 +27,7 @@ def fetch_github_repo():
     else:
         console.print("Give Repository URL:",style="#5272F2")
         url=input()    
-        gitpattern=r'^https?://github\.com/([^/]+)/([^/]+)\.git$'
+        gitpattern=r'^https?://github\.com/([^/]+)/([^/]+)\.git$' #regular expression to extract repository and user name from URL
         match=re.match(gitpattern,url)
         if match:
             username=match.group(1)
@@ -34,5 +36,5 @@ def fetch_github_repo():
             console.print("Invalid URL!",style="#CF0A0A")
             return False
     repo_name=f"{username}/{repo_name}"
-    download_repo(g,repo_name,destination_folder,allowed_extensions)
+    download_repo(g,repo_name,destination_folder,allowed_extensions) #calling this function to download the repo
     return True
