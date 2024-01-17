@@ -9,6 +9,7 @@ from analyze_codebase import analyze_codebase
 from rich.console import Console
 codebase_path=repo_path
 
+#function imported from github_fetch.py
 def github_Repository():
     if(fetch_github_repo()):
         console.print("Repository Downloaded Succesfully!!\n",style="Bold #42855B")
@@ -20,12 +21,13 @@ def github_Repository():
     apikey=pwinput.pwinput(prompt='API Key: ' ,mask='*')
     analyze_codebase(codebase_path,apikey)
     
-
+#user-defined function to call the github_repository function and start the tool
 def start():
     console.print(codebase_ASCII_ART,style="#5272F2",justify="left")
     github_Repository()
 
 
+#main function
 if __name__=='__main__':
     console=Console()
     start()
