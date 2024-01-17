@@ -14,7 +14,7 @@ from rich import print, pretty
 pretty.install()
 
 
-#files witht this extensions are downloaded and sent for analyzing to ChatGPT
+#files with this extensions are downloaded and sent for analyzing to ChatGPT
 allowed_extensions = ['c', 'h', 'cpp', 'hpp', 'java', 'py', 'html', 'css', 'js', 'php', 'ruby', 'swift', 'go', 'dart', 'kotlin', 'ts', 'tsx', 'csharp', 'vb', 'scala', 'r', 'rust', 'lua', 'shell', 'sh', 'bash', 'ps1', 'json', 'xml', 'yaml', 'toml', 'ini']
 
 # prompt_text="Analyze the following code and give suggestion for Code Improvement,Code Optimization,Bug Identification and Resolution, suggest no more than 2-3 points per topic.\n\n"
@@ -24,7 +24,7 @@ prompt_text="Please review the code below and identify any syntax or logical err
 repo_path=f"{os.path.dirname(os.path.realpath(__file__))}\\repo-downloads"
 
 
-
+# 3-D art to show when main.py is run
 codebase_ASCII_ART=""" 
 
  ______  ______  _____   ______  ______  ______  ______  ______       ______  __   __  ______  __      __  __  ______  ______  ______    
