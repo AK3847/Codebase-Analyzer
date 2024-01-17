@@ -19,11 +19,13 @@ def fetch_github_repo():
     console.print("How do you want to find the repository?",style="#5272F2")
     console.print("1. Using Username and Repository Name\n2. Using Repository URL",style="#5272F2")
     choice=int(input())
+    #if user selects to give Username and Repository directly
     if(choice==1):
         console.print("Give username:",style="#5272F2")    
         username=input()
         console.print("Give Repository Name:",style="#5272F2")    
         repo_name = input()
+    #if user gives repository URL we parse the Repository and username from it
     else:
         console.print("Give Repository URL:",style="#5272F2")
         url=input()    
