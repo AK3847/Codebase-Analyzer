@@ -1,4 +1,4 @@
-#Modules
+# All required modules in one place to be imported in other files.
 import os
 import json
 import  shutil
