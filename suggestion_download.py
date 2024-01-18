@@ -1,5 +1,6 @@
 from utils import *
 from rich.console import Console
+#user-defined function to download all the suggestions given by ChatGPT into "suggestions.txt" file
 def download(text):
     console=Console()
     with open('suggestions.txt','w') as file:
