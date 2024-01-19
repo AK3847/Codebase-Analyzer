@@ -72,3 +72,9 @@ python main.py
  1. Bug Fix
  1. Code quality/efficiency Improvement
  1. Other..
+- Features/Functionalities to be added soon:
+    - By pass the token-limit (_4096 right now_) to analyze larger code files ;)
+    - Improve the UI/UX in terminal
+    - Storing the API-Key more securely
+      
+_(Raise an issue if you can help me achieve above features ^\_^ )_
