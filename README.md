@@ -65,3 +65,10 @@ python main.py
   tiktoken
 ```
 - _All of this are imported in_ `utils.py`
+
+## Contribution 🤝
+- Any and all contribution are welcome for this project, you can raise issue with headings as:
+ 1. New Feature Suggestion
+ 1. Bug Fix
+ 1. Code quality/efficiency Improvement
+ 1. Other..
