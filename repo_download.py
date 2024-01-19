@@ -2,6 +2,9 @@ from utils import *
 from rich.progress import Progress
 from rich.console import Console
 console=Console()
+
+#user defined function to delete all the directories in the 'repo-downloads' folder before downloading new repository
+# this step is crucial because if there are files from previous run , they will be analyzed again or may have conflicting names with the files from new repository
 def clear_subdirectories(folder_path):
     if os.path.exists(folder_path):
         entries = os.listdir(folder_path)
@@ -27,6 +30,7 @@ def clear_subdirectories(folder_path):
         console.print(f"The folder {folder_path} does not exist.",style="Italic #CF0A0A")
 
 
+#user defined function to download all the files from the given repository locally in 'repo-downloads' folder
 def download_repo(g, repo_name, destination_folder, allowed_extensions):
     repo = g.get_repo(repo_name)
     script_dir = os.path.dirname(os.path.abspath(__file__))
