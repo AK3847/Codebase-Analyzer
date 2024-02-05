@@ -10,8 +10,7 @@ repo_selected=""
 repo_url="https://github.com/AK3847/Flow-Field"
 destination_folder=repo_path
 
-# function to fetch a GITHUB repository using URL or Username & Repository name
-# via Github Access token
+# function to fetch a GITHUB repository using URL or Username & Repository name via GitHub Access token
 def fetch_github_repo():
     console.print("Give GitHub Access Token",style="#5272F2")
     github_token=pwinput.pwinput(prompt='token: ' ,mask='*')
