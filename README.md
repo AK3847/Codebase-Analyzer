@@ -65,3 +65,16 @@ python main.py
   tiktoken
 ```
 - _All of this are imported in_ `utils.py`
+
+## Contribution 🤝
+- Any and all contribution are welcome for this project, you can raise issue with headings as:
+ 1. New Feature Suggestion
+ 1. Bug Fix
+ 1. Code quality/efficiency Improvement
+ 1. Other..
+- Features/Functionalities to be added soon:
+    - By pass the token-limit (_4096 right now_) to analyze larger code files ;)
+    - Improve the UI/UX in terminal
+    - Storing the API-Key more securely
+      
+_(Raise an issue if you can help me achieve above features ^\_^ )_
