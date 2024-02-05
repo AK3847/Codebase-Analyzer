@@ -15,7 +15,8 @@ destination_folder=repo_path
 def fetch_github_repo():
     console.print("Give GitHub Access Token",style="#5272F2")
     github_token=pwinput.pwinput(prompt='token: ' ,mask='*')
-    g = Github(github_token)
+    os.environ['GITHUB_TOKEN'] = github_token
+    g = Github(os.getenv('GITHUB_TOKEN'))
     console.print("How do you want to find the repository?",style="#5272F2")
     console.print("1. Using Username and Repository Name\n2. Using Repository URL",style="#5272F2")
     choice=int(input())

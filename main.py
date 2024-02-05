@@ -19,8 +19,8 @@ def github_Repository():
         return
     console.print("Give your OpenAI API Key",style="#5272F2")
     apikey=pwinput.pwinput(prompt='API Key: ' ,mask='*')
-    analyze_codebase(codebase_path,apikey)
-    
+    os.environ['API_KEY'] = apikey
+    analyze_codebase(codebase_path)
 #user-defined function to call the github_repository function and start the tool
 def start():
     console.print(codebase_ASCII_ART,style="#5272F2",justify="left")

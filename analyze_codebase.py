@@ -28,9 +28,9 @@ def prompt_edenai(content,apikey):
     return generated_text
 
 #function to analyze a code file (content) via ChatGPT using given API KEY
-def prompt_openai(content,apikey):
+def prompt_openai(content):
     headers={
-        "Authorization":f"Bearer {apikey}",
+        "Authorization":f"Bearer {os.getenv('API_KEY')}",
         "Content-Type":"application/json"
     }
     url="https://api.openai.com/v1/chat/completions"
@@ -48,18 +48,18 @@ def prompt_openai(content,apikey):
     return generated_text
 
 #function to analyze the file give in argument and return the suggestion given by ChatGPT
-def analyze_file(path,apikey):
+def analyze_file(path):
     with open(path,'r') as file:
         content=file.read()
     if(tokencount(content)):
-        suggestion=prompt_openai(content,apikey)
+        suggestion=prompt_openai(content)
         return suggestion
     else:
         return "The code length is more than 1000 token! Can't send it to ChatGPT for analyzing ( 4097 token limit)"
 
 
 #function to analyze the whole codebase file-by-file
-def analyze_codebase(path,apikey):
+def analyze_codebase(path):
     global suggestion_load
     filesto_send=[]
     for root,dirs,files in os.walk(path):
@@ -71,7 +71,7 @@ def analyze_codebase(path,apikey):
     with Progress() as progress:
         task = progress.add_task("[#5272F2]Analyzing Codebase...", total=len(filesto_send))
         for file_path in filesto_send:
-            suggestion = analyze_file(file_path, apikey)
+            suggestion = analyze_file(file_path)
             console.print("\n")
             console.print(f"\n[not italic]Suggestion for[/not italic] {os.path.basename(file_path)}:\n", style="italic #FFD95A")
             console.print(f"{suggestion}\n",style="italic #FCF5ED")
